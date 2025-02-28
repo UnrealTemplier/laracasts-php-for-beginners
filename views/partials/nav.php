@@ -1,8 +1,8 @@
 <?php
 
 $home = "/";
-$about = "/about.php";
-$contact = "/contact.php";
+$about = "/about";
+$contact = "/contact";
 
 $nav = "text-gray-300 hover:bg-gray-700 hover:text-white";
 $navSelected = "bg-gray-900 text-white";
