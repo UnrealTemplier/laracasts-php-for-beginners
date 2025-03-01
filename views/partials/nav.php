@@ -2,6 +2,7 @@
 
 $home = "/";
 $about = "/about";
+$notes = "/notes";
 $contact = "/contact";
 
 $nav = "text-gray-300 hover:bg-gray-700 hover:text-white";
@@ -20,6 +21,7 @@ $navSelected = "bg-gray-900 text-white";
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="<?= $home ?>" class="<?= urlIs($home) ? $navSelected : $nav ?> rounded-md  px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
             <a href="<?= $about ?>" class="<?= urlIs($about) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
+            <a href="<?= $notes ?>" class="<?= urlIs($notes) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">Notes</a>
             <a href="<?= $contact ?>" class="<?= urlIs($contact) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">Contact</a>
           </div>
         </div>
