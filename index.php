@@ -4,8 +4,10 @@ require "functions.php";
 require "Database.php";
 //require "router.php";
 
-$database = new Database();
-$users = $database->query("SELECT * FROM users")->fetchAll(PDO::FETCH_ASSOC);
+$config = require("config.php");
+
+$database = new Database($config["database"]);
+$users = $database->query("SELECT * FROM users")->fetchAll();
 
 echo "<h3>Users:</h3>";
 echo "<ul>";
@@ -15,7 +17,7 @@ foreach ($users as $user) {
 echo "</ul>";
 
 
-$posts = $database->query("SELECT * FROM posts")->fetchAll(PDO::FETCH_ASSOC);
+$posts = $database->query("SELECT * FROM posts")->fetchAll();
 
 echo "<h3>Posts:</h3>";
 echo "<ul>";
