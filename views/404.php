@@ -6,7 +6,7 @@
       <h1 class="text-2xl font-bold">Sorry, page not found...</h1>
 
       <p class="mt-4">
-        <a href="/" class="text-blue-500 hover:text-blue-700">Go back home!</a>
+        <a href="/" class="text-blue-600 hover:text-blue-800">Go back home!</a>
       </p>
     </div>
   </main>
