@@ -7,7 +7,7 @@
         <?php foreach ($notes as $note): ?>
           <li class="mt-2 mb-2 text-blue-600 hover:text-blue-800">
             <a href="/note?id=<?= $note["id"] ?>">
-                <?= $note["body"] ?>
+                <?= substr($note["body"], 0, 50) . "..." ?>
             </a>
           </li>
         <?php endforeach; ?>
