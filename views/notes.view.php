@@ -5,7 +5,7 @@
   <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <?php foreach ($notes as $note): ?>
-          <li class="mt-2 mb-2 text-blue-500 hover:text-blue-700">
+          <li class="mt-2 mb-2 text-blue-600 hover:text-blue-800">
             <a href="/note?id=<?= $note["id"] ?>">
                 <?= $note["body"] ?>
             </a>
