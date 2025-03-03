@@ -5,11 +5,11 @@ class Database
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = "root", $password = "")
+    public function __construct($config, $username = 'root', $password = '')
     {
-        $driver = "mysql";
+        $driver = 'mysql';
 
-        $dsn = "{$driver}:" . http_build_query($config, "", ";");
+        $dsn = "{$driver}:" . http_build_query($config, '', ';');
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
@@ -27,6 +27,7 @@ class Database
     {
         return $this->statement->fetchAll();
     }
+
     public function find()
     {
         return $this->statement->fetch();

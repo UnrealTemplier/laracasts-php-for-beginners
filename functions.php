@@ -2,13 +2,13 @@
 
 function dd($value, $compactArrayView = true)
 {
-    echo "<pre>";
+    echo '<pre>';
     if (is_array($value) && $compactArrayView) {
         print_r($value);
     } else {
         var_dump($value);
     }
-    echo "</pre>";
+    echo '</pre>';
     die();
 }
 

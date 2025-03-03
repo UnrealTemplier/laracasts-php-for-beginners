@@ -1,12 +1,12 @@
 <?php
 
-$homeUrl = "/";
-$aboutUrl = "/about";
-$notesUrl = "/notes";
-$contactUrl = "/contact";
+$homeUrl = '/';
+$aboutUrl = '/about';
+$notesUrl = '/notes';
+$contactUrl = '/contact';
 
-$nav = "text-gray-300 hover:bg-gray-700 hover:text-white";
-$navSelected = "bg-gray-900 text-white";
+$nav = 'text-gray-300 hover:bg-gray-700 hover:text-white';
+$navSelected = 'bg-gray-900 text-white';
 ?>
 
 <nav class="bg-gray-800">
