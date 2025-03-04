@@ -9,7 +9,7 @@
         <a href="/notes">Go back to notes</a>
       </p>
 
-      <p class=""><?= $note['body'] ?></p>
+      <p class=""><?= htmlspecialchars($note['body']) ?></p>
 
     </div>
   </main>
