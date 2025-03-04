@@ -23,3 +23,20 @@ function authorize($condition, $statusCode = Response::FORBIDDEN)
         abort($statusCode);
     }
 }
+
+function basePath($path)
+{
+    return BASE_PATH . $path;
+}
+
+function view($path, $attributes = [])
+{
+    extract($attributes);
+    require basePath('views/' . $path);
+}
+
+function partial($path, $attributes = [])
+{
+    $path = 'partials/' . $path;
+    view($path, $attributes);
+}

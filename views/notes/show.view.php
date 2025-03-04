@@ -1,6 +1,6 @@
-<?php require 'views/partials/header.php'; ?>
-<?php require 'views/partials/nav.php'; ?>
-<?php require 'views/partials/banner.php'; ?>
+<?php partial('header.php'); ?>
+<?php partial('nav.php'); ?>
+<?php partial('banner.php', ['heading' => $heading]); ?>
 
   <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -14,4 +14,4 @@
     </div>
   </main>
 
-<?php require 'views/partials/footer.php'; ?>
+<?php partial('footer.php'); ?>
