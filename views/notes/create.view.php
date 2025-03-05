@@ -10,15 +10,31 @@
           <div>
 
             <div class="col-span-full">
-              <label for="body" class="block text-sm/6 font-medium text-gray-900">Text of your note</label>
+              <label for="title" class="block text-sm/6 font-medium text-gray-900">Title</label>
+              <div>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  placeholder="Your note title"
+                ><?= $_POST['title'] ?? '' ?></input>
+              </div>
 
-              <div class="mt-2">
+                <?php if (isset($errors['title'])): ?>
+                  <p class="text-red-500 text-xs mt-1 ml-2">
+                      <?= $errors['title'] ?>
+                  </p>
+                <?php endif; ?>
+
+              <label for="body" class="mt-4 block text-sm/6 font-medium text-gray-900">Content</label>
+              <div>
                 <textarea
                   name="body"
                   id="body"
                   rows="3"
                   class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  placeholder="Your note goes here..."
+                  placeholder="Your note content"
                 ><?= $_POST['body'] ?? '' ?></textarea>
               </div>
 
@@ -32,7 +48,7 @@
           </div>
         </div>
 
-        <div class="mt-6 flex items-center justify-end gap-x-6">
+        <div class="mt-4 flex items-center justify-start gap-x-6">
           <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create</button>
         </div>
       </form>
