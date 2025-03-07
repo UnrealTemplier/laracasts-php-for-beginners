@@ -21,3 +21,7 @@ $router->patch('/note', 'controllers/notes/update.php');
 // Delete a note
 $router->delete('/note', 'controllers/notes/destroy.php');
 
+// Register a user
+$router->get('/register', 'controllers/registration/create.php');
+$router->post('/register', 'controllers/registration/store.php');
+
