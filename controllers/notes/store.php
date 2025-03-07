@@ -33,3 +33,4 @@ $db->query('
 ]);
 
 header('Location: /notes');
+exit();
