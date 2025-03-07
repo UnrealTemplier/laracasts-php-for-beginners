@@ -11,6 +11,8 @@ spl_autoload_register(function ($class) {
     require basePath("{$class}.php");
 });
 
+session_start();
+
 require basePath('bootstrap.php');
 
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
