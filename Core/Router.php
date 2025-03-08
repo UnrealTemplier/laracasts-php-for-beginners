@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\Middleware\Middleware;
+
 class Router
 {
     protected $routes = [];
@@ -62,17 +64,7 @@ class Router
             if ($route['uri'] == $uri && $route['method'] == $method) {
 
                 if ($route['middleware']) {
-                    if ($route['middleware'] === 'guest') {
-                        if ($_SESSION['user'] ?? false) {
-                            redirectTo('/');
-                        }
-                    }
-
-                    if ($route['middleware'] === 'auth') {
-                        if (!$_SESSION['user'] ?? false) {
-                            redirectTo('/');
-                        }
-                    }
+                    Middleware::resolve($route['middleware']);
                 }
 
                 return require basePath($route['controller']);
