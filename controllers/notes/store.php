@@ -32,5 +32,4 @@ $db->query('
     ':user_id' => 1,
 ]);
 
-header('Location: /notes');
-exit();
+redirectTo('/notes');

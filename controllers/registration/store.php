@@ -52,6 +52,5 @@ $db->query(
 
 $_SESSION['user'] = $email;
 
-header('Location: /');
-exit();
+redirectTo('/');
 

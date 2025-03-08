@@ -49,3 +49,10 @@ function partial($path, $attributes = [])
     $path = 'partials/' . $path;
     view($path, $attributes);
 }
+
+function redirectTo($url)
+{
+    http_response_code(Response::REDIRECT);
+    header('Location: ' . $url);
+    exit();
+}

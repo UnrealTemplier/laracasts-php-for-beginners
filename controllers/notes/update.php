@@ -45,5 +45,4 @@ $db->query(
     ],
 );
 
-header('Location: /notes');
-exit();
+redirectTo('/notes');
