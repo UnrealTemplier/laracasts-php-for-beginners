@@ -60,7 +60,9 @@ function redirect($path)
 function login($user)
 {
     session_regenerate_id(true);
-    $_SESSION['user'] = $user['email'];
+    $_SESSION['user'] = [
+        'email' => $user['email'],
+    ];
 }
 
 function logout()
