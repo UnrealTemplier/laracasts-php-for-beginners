@@ -59,8 +59,8 @@ function redirectTo($url)
 
 function login($user)
 {
-    $_SESSION['user'] = $user['email'];
     session_regenerate_id(true);
+    $_SESSION['user'] = $user['email'];
 }
 
 function logout()

@@ -47,5 +47,12 @@ $db->query(
     ],
 );
 
+$user = $db->query(
+    'SELECT * FROM users WHERE email = :email',
+    [
+        'email' => $email,
+    ],
+)->find();
+
 login($user);
 redirectTo('/');
