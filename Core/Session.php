@@ -18,11 +18,7 @@ class Session
 
     public static function get($key, $default = null)
     {
-        if (isset($_SESSION[self::FLASH_KEY][$key])) {
-            return $_SESSION[self::FLASH_KEY][$key];
-        }
-
-        return $_SESSION[$key] ?? $default;
+        return $_SESSION[self::FLASH_KEY][$key] ?? $_SESSION[$key] ?? $default;
     }
 
     public static function flash($key, $value)
