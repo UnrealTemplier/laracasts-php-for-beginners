@@ -45,4 +45,4 @@ $db->query(
     ],
 );
 
-redirectTo('/notes');
+redirect('/notes');

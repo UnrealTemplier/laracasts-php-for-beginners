@@ -50,10 +50,10 @@ function partial($path, $attributes = [])
     return view($path, $attributes);
 }
 
-function redirectTo($url)
+function redirect($path)
 {
     http_response_code(Response::REDIRECT);
-    header('Location: ' . $url);
+    header("Location: {$path}");
     exit();
 }
 

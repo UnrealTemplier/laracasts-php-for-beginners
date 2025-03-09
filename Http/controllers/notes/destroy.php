@@ -17,4 +17,4 @@ $db->query('DELETE FROM notes WHERE id = :id', [
     ':id' => $note['id'],
 ]);
 
-redirectTo('/notes');
+redirect('/notes');

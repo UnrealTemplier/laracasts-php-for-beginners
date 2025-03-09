@@ -32,4 +32,4 @@ $db->query('
     ':user_id' => 1,
 ]);
 
-redirectTo('/notes');
+redirect('/notes');

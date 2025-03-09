@@ -55,4 +55,4 @@ $user = $db->query(
 )->find();
 
 login($user);
-redirectTo('/');
+redirect('/');
