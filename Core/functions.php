@@ -57,16 +57,3 @@ function redirect($path)
     header("Location: {$path}");
     exit();
 }
-
-function login($user)
-{
-    session_regenerate_id(true);
-    $_SESSION['user'] = [
-        'email' => $user['email'],
-    ];
-}
-
-function logout()
-{
-    Session::destroy();
-}
