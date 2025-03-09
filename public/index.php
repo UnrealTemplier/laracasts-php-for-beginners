@@ -12,7 +12,7 @@ spl_autoload_register(function ($class) {
     require basePath("{$class}.php");
 });
 
-session_start();
+Session::start();
 
 require basePath('bootstrap.php');
 
@@ -21,6 +21,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $router = new Router();
 require basePath('routes.php');
+
 $router->route($method, $uri);
 
 Session::unflash();
