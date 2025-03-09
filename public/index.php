@@ -1,6 +1,7 @@
 <?php
 
 use Core\Router;
+use Core\Session;
 
 const BASE_PATH = __DIR__ . '/../';
 
@@ -21,3 +22,5 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $router = new Router();
 require basePath('routes.php');
 $router->route($method, $uri);
+
+Session::unflash();
