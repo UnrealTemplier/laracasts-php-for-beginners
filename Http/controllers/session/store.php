@@ -12,10 +12,9 @@ $password = $_POST['password'] ?? '';
 $form = new LoginForm();
 
 if (!$form->validate($email, $password)) {
-    view('session/create.view.php', [
+    return view('session/create.view.php', [
         'errors' => $form->errors(),
     ]);
-    exit();
 }
 
 $db = App::resolve(Database::class);
@@ -33,7 +32,6 @@ if ($user && password_verify($password, $user['password'])) {
 }
 
 $errors['email'] = 'An account with these credentials do not exist';
-view('session/create.view.php', [
+return view('session/create.view.php', [
     'errors' => $errors,
 ]);
-exit();

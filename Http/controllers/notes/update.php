@@ -25,7 +25,7 @@ if (!Validator::string($_POST['body'], 1, 1000)) {
 }
 
 if (!empty($errors)) {
-    view('notes/edit.view.php', [
+    return view('notes/edit.view.php', [
         'heading' => 'Create Note',
         'errors' => $errors,
         'note' => $note,

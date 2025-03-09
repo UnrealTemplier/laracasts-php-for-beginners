@@ -41,13 +41,13 @@ function basePath($path)
 function view($path, $attributes = [])
 {
     extract($attributes);
-    require basePath('views/' . $path);
+    return require basePath('views/' . $path);
 }
 
 function partial($path, $attributes = [])
 {
     $path = 'partials/' . $path;
-    view($path, $attributes);
+    return view($path, $attributes);
 }
 
 function redirectTo($url)

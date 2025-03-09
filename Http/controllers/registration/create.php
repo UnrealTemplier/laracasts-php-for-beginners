@@ -1,3 +1,3 @@
 <?php
 
-view('registration/create.view.php');
+return view('registration/create.view.php');

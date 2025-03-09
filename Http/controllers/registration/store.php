@@ -18,10 +18,9 @@ if (!Validator::string($password, 8, 255)) {
 }
 
 if (!empty($errors)) {
-    view('registration/create.view.php', [
+    return view('registration/create.view.php', [
         'errors' => $errors,
     ]);
-    exit();
 }
 
 $db = App::resolve(Database::class);
@@ -35,10 +34,9 @@ $user = $db->query(
 
 if ($user) {
     $errors['email'] = 'An account with this email already exists';
-    view('registration/create.view.php', [
+    return view('registration/create.view.php', [
         'errors' => $errors,
     ]);
-    exit();
 }
 
 $db->query(

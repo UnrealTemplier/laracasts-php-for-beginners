@@ -1,5 +1,5 @@
 <?php
 
-view('about.view.php', [
+return view('about.view.php', [
     'heading' => 'About Us',
 ]);
