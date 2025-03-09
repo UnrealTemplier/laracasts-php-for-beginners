@@ -56,3 +56,18 @@ function redirectTo($url)
     header('Location: ' . $url);
     exit();
 }
+
+function login($user)
+{
+    $_SESSION['user'] = $user['email'];
+    session_regenerate_id(true);
+}
+
+function logout()
+{
+    $_SESSION = [];
+    session_destroy();
+
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+}

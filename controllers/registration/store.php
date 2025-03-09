@@ -49,8 +49,5 @@ $db->query(
     ],
 );
 
-
-$_SESSION['user'] = $email;
-
+login($user);
 redirectTo('/');
-

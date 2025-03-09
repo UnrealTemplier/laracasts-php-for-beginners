@@ -25,3 +25,10 @@ $router->delete('/note', 'controllers/notes/destroy.php')->only('auth');
 $router->get('/register', 'controllers/registration/create.php')->only('guest');
 $router->post('/register', 'controllers/registration/store.php')->only('guest');
 
+// Log In
+$router->get('/login', 'controllers/session/create.php')->only('guest');
+$router->post('/login', 'controllers/session/store.php')->only('guest');
+
+// Log Out
+$router->delete('/logout', 'controllers/session/destroy.php')->only('auth');
+

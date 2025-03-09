@@ -4,6 +4,9 @@ $homeUrl = '/';
 $aboutUrl = '/about';
 $notesUrl = '/notes';
 $contactUrl = '/contact';
+$registerUrl = '/register';
+$loginUrl = '/login';
+$logoutUrl = '/logout';
 
 $nav = 'text-gray-300 hover:bg-gray-700 hover:text-white';
 $navSelected = 'bg-gray-900 text-white';
@@ -21,7 +24,9 @@ $navSelected = 'bg-gray-900 text-white';
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="<?= $homeUrl ?>" class="<?= urlIs($homeUrl) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
             <a href="<?= $aboutUrl ?>" class="<?= urlIs($aboutUrl) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
-            <a href="<?= $notesUrl ?>" class="<?= urlIs($notesUrl) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+              <?php if ($_SESSION['user'] ?? false): ?>
+                <a href="<?= $notesUrl ?>" class="<?= urlIs($notesUrl) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+              <?php endif; ?>
             <a href="<?= $contactUrl ?>" class="<?= urlIs($contactUrl) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">Contact</a>
           </div>
         </div>
@@ -46,7 +51,8 @@ $navSelected = 'bg-gray-900 text-white';
                     <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                   </button>
                 <?php else: ?>
-                  <a href="/register" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Register</a>
+                  <a href="<?= $registerUrl ?>" class="<?= urlIs($registerUrl) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">Register</a>
+                  <a href="<?= $loginUrl ?>" class="<?= urlIs($loginUrl) ? $navSelected : $nav ?> rounded-md px-3 py-2 text-sm font-medium">Log In</a>
                 <?php endif; ?>
             </div>
 
@@ -67,8 +73,19 @@ $navSelected = 'bg-gray-900 text-white';
             <!--  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>-->
             <!--</div>-->
           </div>
+
+          <div class="ml-3">
+              <?php if ($_SESSION['user'] ?? false): ?>
+                <form action="<?= $logoutUrl ?>" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button class="<?= $nav ?> rounded-md px-3 py-2 text-sm font-medium">Log Out</button>
+                </form>
+              <?php endif; ?>
+          </div>
+
         </div>
       </div>
+
       <div class="-mr-2 flex md:hidden">
         <!-- Mobile menu button -->
         <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" aria-controls="mobile-menu" aria-expanded="false">
