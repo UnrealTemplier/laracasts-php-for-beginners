@@ -6,6 +6,11 @@ class Session
 {
     protected const FLASH_KEY = '_flash';
 
+    public static function has($key)
+    {
+        return (bool)self::get($key);
+    }
+
     public static function put($key, $value)
     {
         $_SESSION[$key] = $value;
