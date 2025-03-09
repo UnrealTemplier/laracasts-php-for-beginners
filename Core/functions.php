@@ -1,6 +1,7 @@
 <?php
 
 use Core\Response;
+use Core\Session;
 
 function dd($value, $compactArrayView = true)
 {
@@ -67,9 +68,5 @@ function login($user)
 
 function logout()
 {
-    $_SESSION = [];
-    session_destroy();
-
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+    Session::destroy();
 }
