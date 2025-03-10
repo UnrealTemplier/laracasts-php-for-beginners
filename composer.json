@@ -6,13 +6,21 @@
       "email": "jaimore.evseev@gmail.com"
     }
   ],
-  "require": {
-    "illuminate/collections": "^12.1"
-  },
   "autoload": {
     "psr-4": {
       "Core\\": "Core/",
       "Http\\": "Http/"
+    }
+  },
+  "require": {
+    "illuminate/collections": "^12.1"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.7"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
     }
   }
 }
