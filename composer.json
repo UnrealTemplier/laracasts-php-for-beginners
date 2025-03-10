@@ -6,7 +6,9 @@
       "email": "jaimore.evseev@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "illuminate/collections": "^12.1"
+  },
   "autoload": {
     "psr-4": {
       "Core\\": "Core/",
