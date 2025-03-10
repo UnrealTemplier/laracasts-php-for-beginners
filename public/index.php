@@ -6,12 +6,8 @@ use Core\ValidationException;
 
 const BASE_PATH = __DIR__ . '/../';
 
+require BASE_PATH . 'vendor/autoload.php';
 require BASE_PATH . 'Core/functions.php';
-
-spl_autoload_register(function ($class) {
-    $class = str_replace('\\', '/', $class);
-    require basePath("{$class}.php");
-});
 
 Session::start();
 

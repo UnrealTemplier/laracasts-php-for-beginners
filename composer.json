@@ -1,0 +1,16 @@
+{
+  "name": "unrealtemplier/laracasts-php-for-beginners",
+  "authors": [
+    {
+      "name": "UnrealTemplier",
+      "email": "jaimore.evseev@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  }
+}
