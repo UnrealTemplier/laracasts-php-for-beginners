@@ -27,6 +27,11 @@ class Router
         die();
     }
 
+    public function previousUrl()
+    {
+        return $_SERVER['HTTP_REFERER'];
+    }
+
     public function get($uri, $controller)
     {
         return $this->add('GET', $uri, $controller);
@@ -58,6 +63,9 @@ class Router
         return $this;
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function route($method, $uri)
     {
         foreach ($this->routes as $route) {
